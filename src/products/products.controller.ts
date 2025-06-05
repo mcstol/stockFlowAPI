@@ -41,7 +41,6 @@ export class ProductsController {
   @Put(':id')
   update(@Param('id') id: string, @Body() updateProductDto: CreateProductDto) {
     const index = mockedProducts.findIndex((product) => product.id === id);
-    console.log('🚀 ~ ProductsController ~ update ~ index:', index);
     if (index === -1) {
       throw new HttpException('Product not found', HttpStatus.NOT_FOUND);
     }
